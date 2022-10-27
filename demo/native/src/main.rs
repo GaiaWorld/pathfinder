@@ -69,7 +69,7 @@ lazy_static! {
 
 fn main() {
     color_backtrace::install();
-    pretty_env_logger::init();
+    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init();
 
     // Read command line options.
     let mut options = Options::default();
